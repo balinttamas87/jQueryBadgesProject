@@ -5,8 +5,11 @@ $(function() {
 	dataType: "jsonp",
 	success: function(response) {
 		var completedCoursesArr = response.courses.completed;
+		var currentCompletedCourseTitle = "";
 		for (var i = 0; i < completedCoursesArr.length; i++) {
-			$("#badges").append("<div class='course'></div>");
+			currentCompletedCourseTitle = completedCoursesArr[i].title;
+			$("#badges").append("<div class='course'><h3>" + currentCompletedCourseTitle + "</h3></div>");
+
 		}
 	}
   });
